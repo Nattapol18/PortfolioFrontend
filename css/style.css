@@ -1,0 +1,452 @@
+:root {
+    --primary-dark: #2c2c2c;
+    --primary-light: #f5f5f5;
+    --accent-gray: #808080;
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --border-color: #e0e0e0;
+    --spacing-unit: 2rem;
+    --hover-color: #1a73e8; /* Updated to a professional blue */
+}
+body {
+    font-family: 'Josefin Sans', sans-serif; /* Updated font family for a more professional look */
+    font-weight: 400;
+}
+/* styling menu icon */
+.nav-menu {
+    border: none;
+    background-color: #fff;
+    font-size: 1.5rem;
+    color: #000000;
+    cursor: pointer;
+}
+.navbar {
+    padding: 1rem var(--spacing-unit);
+    background-color: var(--primary-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} 
+.navbar-brand {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-color) !important;
+}
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+/* Styling navbar links */
+.navbar-nav a {
+    color: var(--text-dark) !important;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+.navbar-nav a:hover{
+    color: var(--hover-color) !important;
+}
+.navbar-nav a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    top: 35px;
+    position: absolute;
+    background: var(--hover-color); /* Updated to match hover color */
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+.navbar-nav a:hover:after { 
+    width: 100%; 
+    left: 0; 
+}
+/* styling contact btn  */
+.c-btn{
+    border: none;
+    background: var(--primary-dark) !important;
+    color: var(--text-light) !important;
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.c-btn:hover {
+    background: var(--hover-color) !important;
+    transform: translateY(-2px);
+  }
+/* styling home section starts */
+.home{
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: var(--spacing-unit) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home h2{
+    font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+/* Service cards */
+.service-card {
+    padding: 2rem;
+    border-radius: 1rem;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}  
+.home p{
+    width: fit-content;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.h-btn:hover{
+    background: var(--hover-color);
+    color: #fff;
+    transform: translateY(-20px);
+    transition-duration: 1s;
+}
+.link{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--hover-color);
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+.link::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    top: 20px;
+    background-color: var(--hover-color);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.link:hover{
+    color: var(--primary-dark);
+}
+.link:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+/* adding animation to home section image  */
+.home img{
+    animation: floatimg 4s ease-in-out infinite;
+}
+@keyframes floatimg {
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-24px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+/* expertise section starts */
+.heading small{
+    color: var(--hover-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.heading h3{
+    margin-top: 0.5rem;
+    color: var(--primary-dark);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.expertise h4{
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+.expertise a{
+    text-decoration: none;
+    color: var(--hover-color);
+    transition: color 0.3s ease-in-out;
+}
+.expertise a:hover{
+    color: #3f396d;
+}
+.expertise .service-card{
+    text-align: center;
+    padding: 15px 15px;
+    border-radius: 0.7rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* skill section starts */
+.skill{
+    background-color: rgb(234, 234, 249);
+    padding: 50px 0;
+}
+.progress-card {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5%; /* ลด padding เพื่อความยืดหยุ่น */
+    background-color: #fff;
+    text-align: center;
+    border-radius: 15px; /* ใช้ค่าที่เหมาะสมสำหรับมุมโค้ง */
+    height: auto; /* ให้ปรับตามเนื้อหา */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s ease;
+}
+
+.progress-card:hover {
+    transform: scale(1.05); /* ลดการขยายให้เหมาะสมกับพื้นที่ */
+}
+
+@media (max-width: 768px) {
+    .progress-card {
+        padding: 8%; /* ลด padding บนอุปกรณ์ที่มีหน้าจอเล็ก */
+        border-radius: 10px; /* ลดความโค้งของมุม */
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); /* ลดเงาให้นุ่มขึ้น */
+    }
+}
+
+@media (max-width: 480px) {
+    .progress-card {
+        padding: 5%; /* ลด padding เพิ่มเติมสำหรับมือถือ */
+        font-size: 14px; /* ลดขนาดฟอนต์สำหรับหน้าจอเล็ก */
+        border-radius: 8px; /* มุมโค้งเล็กลง */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* เงาที่เรียบขึ้น */
+    }
+}
+
+.circular-progress{
+    position: relative;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    background: conic-gradient(#000000 3.6deg, #000000 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.circular-progress::before{
+    content: "";
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.progress-value{
+    position: relative;
+    color: var(--text-dark) !important;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.text{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.heading p{
+    font-size: 1.3rem;
+}
+/* portfolio section starts */
+#myBtnContainer{
+    margin-bottom: 45px;
+    display: flex;
+    justify-content: center;
+}
+#myBtnContainer button{
+  border: none;
+  color: black;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;   
+  display: inline-block;
+  margin: 0 25px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+#myBtnContainer button:hover{
+    color: #00a2ff;
+}
+#myBtnContainer button:focus{
+    outline: none;
+}
+.post .content h4{
+    font-size: 1rem;
+    font-weight: 700;
+}
+.post .card{
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.post .card:hover {
+    transform: translateY(-5px);
+  }
+/* testimonial section starts */
+.testimonial img:hover{
+    transform: scale(1.2,1.2);
+    transition-duration: 1s;
+}
+.testimonial h4{
+    color: #3f396d;
+}
+.testimonial i{
+    font-size: 2.9rem;
+    color: #fca61f;
+}
+.testimonial .nextprev-btn{
+    border: none;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.prev:hover,.prev-btn:hover{
+    color:#6f34fe;
+    transform: translateX(-10px);
+    transition-duration: 1s;
+}
+
+.next:hover,.next-btn:hover{
+    color:#6f34fe;
+    transform: translateX(10px);
+    transition-duration: 1s;
+}
+
+/* blog section starts */
+.blog{
+    background-color: #f2f2ff;
+    padding: 50px 0;
+}
+
+.blog .blogpost .card{
+    border: none;
+    border-radius: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-bg{
+    background-color: #fff;
+}
+
+.blog .blogpost small{
+    color: #000000;
+    font-size: 1.1rem;
+}
+
+.blog .blogpost h4,.blogpost a{
+    color: #3f396d;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+.blogpost a:hover{
+    color:#003cff;
+}
+.blog .blogpost .read-more-btn{
+    text-decoration: none;
+    color: black; /* ตัวอักษรสีดำ */
+    background-color: transparent; /* พื้นหลังโปร่งแสง */
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.blog .blogpost .read-more-btn:hover {
+    color: rgb(255, 255, 255); /* เปลี่ยนสีข้อความเป็นขาวเมื่อ hover */
+    background-color: black; /* พื้นหลังเป็นสีดำ */
+}
+/* styling modal group  */
+.btn-c{
+    margin-left: 94%;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+}
+.portfolio .card {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+.portfolio .card:hover {
+    transform: translateY(-5px);
+}
+.portfolio-body .card-img-top {
+    width: 100%; /* ทำให้ภาพมีความกว้าง 100% ของ container */
+    height: 200px; /* กำหนดความสูงที่ต้องการ */
+    object-fit: cover; /* ทำให้ภาพไม่ถูกบิดเบือน */
+}
+.footer {
+    background-color: var(--primary-dark) !important;
+    padding: 4rem 0 2rem;
+}
+.footer a {
+    color: var(--text-light) !important;
+  }
+.footer h3 {
+    font-size: 2rem; /* ขนาดฟอนต์ */
+    margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+}
+.footer .link-group a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+.footer .link-group a:hover {
+    color: var(--primary-color);
+}
+.link-group {
+    display: flex; /* ใช้ Flexbox */
+    justify-content: center; /* จัดกลาง */
+    flex-wrap: wrap; /* ให้ลิงก์อยู่ในบรรทัดเดียวกัน */
+}
+.link-group a {
+    color: #ffffff; /* สีลิงก์ */
+    text-decoration: none; /* ไม่มีขีดเส้นใต้ */
+    margin: 0 15px; /* ระยะห่างระหว่างลิงก์ */
+    transition: color 0.3s; /* เพิ่ม transition */
+}
+.link-group a:hover {
+    color: #ffffff; /* เปลี่ยนสีเมื่อ hover */
+}
+.link::after {
+    background-color: var(--hover-color) !important;
+  }
+.vr {
+    border-left: 1px solid var(--text-light) !important;
+    height: 20px; /* ความสูงของเส้นแบ่ง */
+    margin: 0 10px; /* ระยะห่าง */
+}
+hr {
+    border-color: #ffffff; /* สีของเส้นแบ่ง */
+}
+.footer p {
+    color: #ffffff; /* สีข้อความ */
+    margin-top: 20px; /* ระยะห่างด้านบน */
+}
+.blogpost img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
